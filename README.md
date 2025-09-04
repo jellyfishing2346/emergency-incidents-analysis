@@ -3,6 +3,19 @@
 ## 🚨 Overview
 This project provides comprehensive analysis and visualization of emergency incidents data from the NERIS (National Emergency Response Information System) database. The analysis includes response times, incident patterns, geographic distribution, and operational efficiency metrics.
 
+## ⚠️ **Data File Required**
+**Important:** The main dataset (`NERIS_COMPLETE_INCIDENTS.csv`) is not included in this repository due to its size (76MB). 
+
+**To run the interactive dashboard:**
+1. Download or obtain the NERIS emergency incidents dataset
+2. Save it as `NERIS_COMPLETE_INCIDENTS.csv` in the project root directory
+3. The file should contain ~50,000 emergency incident records with 38 columns
+
+**Alternative:** View the pre-generated analysis files included in this repository:
+- `incident_analysis.png` - Comprehensive visualizations
+- `database_summary.md` - Detailed analysis report
+- `quick_overview.png` - Data overview charts
+
 ## 📊 Features
 
 ### Data Analysis (`data_analyzer.py`)
@@ -130,19 +143,24 @@ Modify the filtering logic in the dashboard to add new filter options or change 
 ## 📋 File Structure
 ```
 emergency-incidents-analysis/
-├── NERIS_COMPLETE_INCIDENTS.csv    # Source data
-├── data_analyzer.py               # Main analysis script
-├── dashboard.py                   # Streamlit dashboard
-├── requirements.txt               # Python dependencies
-├── setup.sh                      # Setup script
-├── README.md                     # This file
-└── Generated files:
-    ├── incident_analysis.png
-    ├── geographic_analysis.png
-    ├── response_time_analysis.png
-    ├── interactive_dashboard.html
-    └── analysis_report.md
+├── NERIS_COMPLETE_INCIDENTS.csv    # Source data (NOT INCLUDED - see above)
+├── data_analyzer.py                # Main analysis script
+├── dashboard.py                     # Streamlit dashboard
+├── database_summary.py              # Database summary generator
+├── quick_preview.py                 # Quick data overview
+├── requirements.txt                 # Python dependencies
+├── setup.sh                         # Setup script
+├── .gitignore                       # Git ignore file
+├── README.md                        # This file
+└── Generated files (included):
+    ├── incident_analysis.png        # ✅ Analysis visualizations
+    ├── quick_overview.png           # ✅ Data overview charts
+    ├── database_summary.md          # ✅ Comprehensive analysis report
+    └── database_summary.json       # ✅ Structured analysis data
 ```
+
+**Files included in repository:** ✅  
+**Data file required separately:** ⚠️ `NERIS_COMPLETE_INCIDENTS.csv`
 
 ## 🎯 Use Cases
 
@@ -166,6 +184,32 @@ emergency-incidents-analysis/
 - Response times calculated from alarm to arrival
 - Geographic coordinates provided for mapping analysis
 - Some records may have missing values for certain fields
+
+## 🛠️ Troubleshooting
+
+### Dashboard Shows "Data File Not Found" Error
+1. Ensure `NERIS_COMPLETE_INCIDENTS.csv` is in the project root directory
+2. Check the file name matches exactly (case-sensitive)
+3. Verify the file contains the expected emergency incidents data
+4. Try restarting the dashboard with `streamlit run dashboard.py`
+
+### Missing Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Virtual Environment Issues
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### View Analysis Without Data File
+If you don't have the data file, you can still view the analysis:
+- `incident_analysis.png` - Pre-generated visualizations
+- `database_summary.md` - Complete analysis report
+- `quick_overview.png` - Data overview charts
 
 ## 🤝 Contributing
 To contribute to this project:

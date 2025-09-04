@@ -8,6 +8,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import os
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import folium
@@ -50,7 +51,39 @@ st.markdown("""
 @st.cache_data
 def load_data():
     """Load and preprocess the emergency incidents data."""
-    df = pd.read_csv('/Users/test/emergency-incidents-analysis/NERIS_COMPLETE_INCIDENTS.csv')
+    # Try multiple possible file locations
+    possible_paths = [
+        'NERIS_COMPLETE_INCIDENTS.csv',  # Same directory
+        '/Users/test/emergency-incidents-analysis/NERIS_COMPLETE_INCIDENTS.csv',  # Original path
+        './NERIS_COMPLETE_INCIDENTS.csv',  # Current directory
+        '../NERIS_COMPLETE_INCIDENTS.csv'  # Parent directory
+    ]
+    
+    df = None
+    for file_path in possible_paths:
+        try:
+            if os.path.exists(file_path):
+                df = pd.read_csv(file_path)
+                st.success(f"✅ Data loaded successfully from: {file_path}")
+                break
+        except Exception as e:
+            continue
+    
+    if df is None:
+        st.error("""
+        🚨 **Data File Not Found**
+        
+        The NERIS_COMPLETE_INCIDENTS.csv file is required to run this dashboard.
+        
+        **To fix this:**
+        1. Download the NERIS emergency incidents dataset
+        2. Save it as `NERIS_COMPLETE_INCIDENTS.csv` in the project directory
+        3. Restart the dashboard
+        
+        **Alternative:** Use the static analysis files (`incident_analysis.png`, `database_summary.md`) 
+        that are included in this repository.
+        """)
+        st.stop()
     
     # Convert datetime columns
     datetime_cols = ['alarm_datetime', 'arrival_datetime', 'controlled_datetime', 
