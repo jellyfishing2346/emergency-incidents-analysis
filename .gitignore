@@ -1,0 +1,32 @@
+# Virtual Environment
+venv/
+env/
+.env
+
+# Large Data Files
+*.csv
+NERIS_COMPLETE_INCIDENTS.csv
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+
+# Generated Files (optional - you might want to include these)
+# *.png
+# *.html
+# *.json
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Logs
+*.log

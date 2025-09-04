@@ -1,0 +1,108 @@
+{
+  "database_info": {
+    "total_records": 50000,
+    "total_columns": 38,
+    "file_size_mb": 76.0,
+    "date_range": {
+      "start": "2020-09-03",
+      "end": "2025-09-02",
+      "span_years": 5.0
+    }
+  },
+  "geographic_coverage": {
+    "unique_cities": 5,
+    "unique_zip_codes": 9926,
+    "place_types": 5,
+    "top_cities": {
+      "Ellicott City": 10091,
+      "Catonsville": 10051,
+      "Laurel": 10034,
+      "Columbia": 9921,
+      "Baltimore": 9903
+    }
+  },
+  "incident_statistics": {
+    "unique_incident_types": 14,
+    "unique_incident_categories": 4,
+    "total_casualties": 8780,
+    "incidents_with_casualties": 8780,
+    "top_incident_descriptions": {
+      "Medical - Overdose": 4486,
+      "Medical - Unconscious": 4419,
+      "Medical - Vehicle Collision": 4395,
+      "Medical - Fall Injury": 4387,
+      "Medical - Stroke": 4345
+    }
+  },
+  "response_metrics": {
+    "average_response_time": 8.01,
+    "median_response_time": 8.0,
+    "fastest_response": 4.0,
+    "slowest_response": 12.0,
+    "average_units_responded": 3.0
+  },
+  "medical_outcomes": {
+    "transport_disposition": {
+      "NO_TRANSPORT": 14613,
+      "TRANSPORT_BY_EMS_UNIT": 12310,
+      "PATIENT_REFUSED_TRANSPORT": 7995
+    },
+    "patient_care_evaluations": {
+      "BLS": 20956,
+      "ALS": 7032,
+      "FIRST_AID": 6930
+    }
+  },
+  "data_quality": {
+    "completeness": {
+      "incident_number": 100.0,
+      "neris_uid": 100.0,
+      "department_neris_id": 100.0,
+      "neris_id_format": 100.0,
+      "people_present": 100.0,
+      "animals_rescued": 100.0,
+      "displacement_count": 100.0,
+      "incident_type": 100.0,
+      "incident_description": 100.0,
+      "incident_category": 100.0,
+      "address_line_1": 100.0,
+      "city": 100.0,
+      "state": 100.0,
+      "zip_code": 100.0,
+      "place_type": 100.0,
+      "latitude": 100.0,
+      "longitude": 100.0,
+      "alarm_datetime": 100.0,
+      "arrival_datetime": 100.0,
+      "controlled_datetime": 100.0,
+      "last_unit_cleared_datetime": 100.0,
+      "response_time_minutes": 100.0,
+      "control_time_minutes": 100.0,
+      "total_time_minutes": 100.0,
+      "units_responded": 100.0,
+      "patient_care_report_id": 69.8,
+      "patient_care_evaluation": 69.8,
+      "patient_status": 69.8,
+      "transport_disposition": 69.8,
+      "fire_suppression_present": 7.5,
+      "fire_suppression_operation": 7.5,
+      "fire_suppression_effectiveness": 7.5,
+      "sprinklers_activated": 7.5,
+      "has_smoke_alarm": 100.0,
+      "has_fire_alarm": 100.0,
+      "has_other_alarm": 100.0,
+      "total_casualties": 100.0,
+      "incident_created_at": 100.0
+    },
+    "missing_data_analysis": {
+      "patient_care_report_id": 30.2,
+      "patient_care_evaluation": 30.2,
+      "patient_status": 30.2,
+      "transport_disposition": 30.2,
+      "fire_suppression_present": 92.5,
+      "fire_suppression_operation": 92.5,
+      "fire_suppression_effectiveness": 92.5,
+      "sprinklers_activated": 92.5
+    }
+  }
+}
